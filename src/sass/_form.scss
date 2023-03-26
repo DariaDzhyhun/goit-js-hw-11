@@ -1,0 +1,202 @@
+$mobile-width: 480px;
+$tablet-width: 768px;
+$desktop-width: 1200px;
+
+.container {
+    padding: 0 15px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media screen and (min-width:#{$mobile-width}) {
+        width: $mobile-width;
+    }
+
+    @media screen and (min-width:#{$tablet-width}) {
+        width: $tablet-width;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media screen and (min-width:#{$desktop-width}) {
+        width: $desktop-width;
+    }
+}
+
+body::-webkit-scrollbar {
+    width: 15px;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #c72169;
+    border-radius: 10px;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fadadd;
+}
+
+p {
+    margin: 0;
+    padding-left: 0;
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    transition: transform 250ms ease-in;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @media screen and (min-width:#{$tablet-width}) {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+.search-form input {
+    font-size: 25px;
+    color: #c72169;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: none;
+    width: 100%;
+    border-radius: 10px;
+    transition: outline-color 250ms ease-in;
+
+    &::placeholder {
+        font-size: 25px;
+        color: rgba(199, 33, 105, 0.4);
+    }
+
+    &:focus {
+        outline-color: #c72169;
+    }
+
+    @media screen and (min-width:#{$tablet-width}) {
+        font-size: 30px;
+    }
+
+    @media screen and (min-width:#{$desktop-width}) {
+        width: 400px;
+    }
+}
+
+button {
+    width: 200px;
+    font-size: 25px;
+    color: #c72169;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 250ms ease-in, color 250ms ease-in;
+
+    &:hover {
+        color: rgba(255, 255, 255, 0.6);
+        background-color: #c72169;
+    }
+
+    &:focus {
+        color: rgba(255, 255, 255, 0.6);
+        background-color: #c72169;
+        outline: none;
+    }
+
+    @media screen and (min-width:#{$tablet-width}) {
+        font-size: 30px;
+    }
+}
+
+.gallery {
+    padding-bottom: 20px;
+
+    @media screen and (min-width:#{$tablet-width}) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
+
+.info {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 10px;
+    color: #c72169;
+}
+
+.info-item {
+    font-size: 30px;
+
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    @media screen and (max-width:#{$tablet-width}) {
+        font-size: 20px;
+    }
+}
+
+.photo-card {
+    background-color: rgba(255, 255, 255, 0.6);
+    // flex-basis: calc(100% / 4 - 60px);
+    border-radius: 10px;
+    overflow: hidden;
+
+    @media screen and (max-width:#{$tablet-width}) {
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+    @media screen and (min-width:#{$tablet-width}) {
+        width: calc((100% - 20px) / 2);
+    }
+
+    @media screen and (min-width:#{$desktop-width}) {
+        width: calc((100% - 40px) / 3);
+    }
+}
+
+.img-wrapper {
+    height: 400px;
+
+    @media screen and (min-width:#{$tablet-width}) {
+        height: 300px;
+    }
+}
+
+button[disabled] {
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.auth {
+    margin-left: 500px;
+}
